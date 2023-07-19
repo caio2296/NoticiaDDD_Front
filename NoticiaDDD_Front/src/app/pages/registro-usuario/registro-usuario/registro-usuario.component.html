@@ -1,0 +1,38 @@
+<div class="conteudo-registro">
+
+    <form class="conteudo-form" [formGroup]="registroForm" (submit)="submitRegistro()">
+
+        <div class="logo">
+            Logo
+        </div>
+
+        <div>
+            <div>
+                <input class="input-registro" placeholder="email" formControlName="email" />
+            </div>
+            <div class="mensagem-erro"
+                *ngIf="registroForm.get('email')?.errors?.['required'] && registroForm.get('email')?.touched">
+                Campo Obrigatorio!
+            </div>
+            <div class="mensagem-erro" *ngIf="registroForm.get('email')?.errors?.['email'] && registroForm.get('email')?.touched">
+                formato do Email não e valido!
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <input class="input-login" type="password" placeholder="senha" formControlName="senha" />
+            </div>
+            <div class="mensagem-erro"
+                *ngIf="registroForm.get('senha')?.errors?.['required'] && registroForm.get('senha')?.touched">
+                Campo Obrigatorio!
+            </div>
+        </div>
+
+        <div>
+            <button class="input-submit" [disabled]="registroForm.valid"> Registrar </button>
+        </div>
+
+    </form>
+
+</div>

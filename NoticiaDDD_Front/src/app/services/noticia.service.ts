@@ -8,9 +8,6 @@ import { NoticiaViewModel } from "../models/noticiaViewModel/NoticiaViewModel";
 export class NoticiaService{
     private readonly baseUrl= environment["endPoint"];
 
-    /**
-     *
-     */
     constructor(private httpCliente:HttpClient) {
     
     }
@@ -23,8 +20,8 @@ export class NoticiaService{
 
 
     ListarNoticiasCustomizadas(){
-        return this.httpCliente.post<Array<NoticiaViewModel>>(
-            `${this.baseUrl}ListarNoticiasCustomizada/`,
+        return this.httpCliente.post<any>(
+            `${this.baseUrl}ListarNoticiasCustomizadas/`,
             null
         );
     }

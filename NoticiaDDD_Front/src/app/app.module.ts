@@ -13,6 +13,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Interceptor } from './interceptor/interceptor';
+import { RegistroUsuarioComponent } from './pages/registro-usuario/registro-usuario/registro-usuario.component';
 
 
 const serviceAutentica = [Interceptor];
@@ -24,6 +25,7 @@ const serviceAutentica = [Interceptor];
     AddNoticiaComponent,
     NoticiasComponent,
     NavbarComponent,
+    RegistroUsuarioComponent,
 
 
   ],
