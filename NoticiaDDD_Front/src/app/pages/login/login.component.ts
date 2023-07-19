@@ -29,11 +29,11 @@ ngOnInit(): void {
 
 submitLogin(){
   var dadosLogin = this.loginForm.getRawValue() as loginModel;
-  
+
   this.loginService.LoginUsuario(dadosLogin)
   .subscribe(
     token=>{
-      debugger
+      
       this.autenticaService.DefineToken(token);
       this.router.navigate(["/noticias"]);
       

@@ -5,12 +5,17 @@ import{Injectable} from"@angular/core";
 )
 export class AutenticaService{
  private Autenticado: boolean = true;
+ private token!:string;
  
  public DefineToken(token: string){
-    sessionStorage.setItem('token',token);
+   const tokenString = JSON.stringify(token);
+   sessionStorage.setItem('token', tokenString); 
+   //sessionStorage.setItem('token',token);
  }
  public ObterToken(){
-    return sessionStorage.getItem('token');
+   const tokenString = sessionStorage.getItem('token');
+   return tokenString ? JSON.parse(tokenString) : null; 
+   //return sessionStorage.getItem('token');
  }
  public LimparToken(){
     sessionStorage.removeItem('token');

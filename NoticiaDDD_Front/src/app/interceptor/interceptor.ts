@@ -21,18 +21,20 @@ export class Interceptor implements HttpInterceptor{
         let headers;
 
         if(req.body instanceof FormData){
+            
             headers: new HttpHeaders(
                 {
                     contentType:"false",
                     processData:"false",
-                    Authorization:"Bearer"+this.autenticaService.ObterToken()
+                    Authorization: "Bearer " + this.autenticaService.ObterToken()
                 }
             );
         }else{
+            
             headers = new HttpHeaders()
             .append("accept","application/json")
             .append("Content-Type","application/json")
-            .append("Authorization","Bearer"+this.autenticaService.ObterToken());
+            .append("Authorization","Bearer " + this.autenticaService.ObterToken());
         }
 
         let request = req.clone({headers});

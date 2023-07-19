@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {AddNoticiaComponent} from'./pages/add-noticia/add-noticia/add-noticia.component';
 import { LoginComponent } from './pages/login/login.component';
 import { NoticiasComponent } from './pages/noticias/noticias/noticias.component';
+import { RegistroUsuarioComponent } from './pages/registro-usuario/registro-usuario/registro-usuario.component';
 
 const routes: Routes = [{
   path: "",
@@ -14,10 +15,12 @@ const routes: Routes = [{
 path:"login", component:LoginComponent
 },
 {
-  path:"addNoticia", component:AddNoticiaComponent
+  path:"addnoticia", component:AddNoticiaComponent
 },
 {
-  path:"noticia",component:NoticiasComponent
+  path:"noticias",component:NoticiasComponent
+},{
+  path:"registro", component:RegistroUsuarioComponent
 }
 ];
 
